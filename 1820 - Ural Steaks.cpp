@@ -1,4 +1,5 @@
 /*
+    Cook n sides twice == cook 2n sides, with one corner case that you can't cook everything faster than 1 minute
 */
 
 #include <stdio.h>
