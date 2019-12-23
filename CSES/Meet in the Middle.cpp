@@ -1,4 +1,5 @@
-/*
+/* 
+ 
 */
  
 #include <stdio.h>
@@ -10,19 +11,20 @@ using namespace std;
  
 #define LSOne(S) (S & (-S))
 #define EPS 1e-9
-#define MOD 1000000007
  
 typedef long long ll;
 typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<int, int> pi;
 typedef pair<ll, ll> pll;
-typedef tree<string, null_type, less<string>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset;
+typedef pair<ll, int> pli;
+typedef pair<double, double> pd;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset;
  
 const int MAXN = 45;
 int n, x;
 int arr[MAXN];
-
+ 
 vector<ll> Generate(int start, int sz)
 {
     vector<ll> res((1<<sz));
@@ -41,17 +43,17 @@ vector<ll> Generate(int start, int sz)
 int main()
 {
     std::ios::sync_with_stdio(false);
-    //cin.tie(0); // FOR QUERY PROBLEM DON'T FORGET TO UNCOMMENT THIS
+    cin.tie(0); // FOR QUERY PROBLEM DON'T FORGET TO UNCOMMENT THIS
     cin >> n >> x;
     for(int i = 0; i < n; ++i)
     {
         cin >> arr[i];
     }
-
+ 
     vector<ll> s1 = Generate(0, n/2);
     vector<ll> s2 = Generate(n/2, n-n/2);
  
-    int ans = 0;
+    ll ans = 0;
     sort(s2.begin(), s2.end());
     for(const auto& num : s1)
     {
@@ -61,4 +63,4 @@ int main()
     }
     cout << ans << "\n";
     return 0;
-}
+}        
