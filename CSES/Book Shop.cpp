@@ -52,7 +52,6 @@ int main()
     {
         for(int j = x; j >= prices[i]; --j)
         {
-            if(j < prices[i]) continue;
             dp[j] = max(dp[j], dp[j-prices[i]] + values[i]);
         }
     }
