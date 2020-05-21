@@ -7,8 +7,10 @@
             "command": "g++",
             "args": [
                 "-std=c++11",
-                "-fsanitize=address",
-                "-fsanitize=undefined",
+                "-Wall",
+                "-Wextra",
+                "-fsanitize=address", // Doesn't work on Windows
+                "-fsanitize=undefined", // Doesn't work on Windows
                 "main.cpp",
                 "-O2",
                 "-o",
