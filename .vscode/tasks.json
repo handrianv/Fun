@@ -6,11 +6,12 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-std=c++11",
+                "-std=c++17",
                 "-Wall",
                 "-Wextra",
-                "-fsanitize=address", // Doesn't work on Windows
-                "-fsanitize=undefined", // Doesn't work on Windows
+                "-Wshadow",
+                //"-fsanitize=address", // Doesn't work on Windows
+                //"-fsanitize=undefined", // Doesn't work on Windows
                 "main.cpp",
                 "-O2",
                 "-o",
