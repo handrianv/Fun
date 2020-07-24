@@ -49,7 +49,7 @@ typedef pair<ll, int> pli;
 typedef pair<double, double> pd;
 typedef tree<pi, null_type, less<pi>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
 
-int MAXFIB = 2e9;
+const int MAXFIB = 2e9;
 int i, j, n;
 ll fi, fj;
 
@@ -116,10 +116,10 @@ int main()
         mult = -1;
     }
 
-    int r = (n > i) ? n-i-1 : n-i;
+    int r = (n > i) ? n-i-1 : i-n;
     for(int k = 0; k < r; ++k)
     {
-        ll temp = prev + mult * curr;
+        ll temp = prev + curr * mult;
         prev = curr;
         curr = temp;
     }
@@ -128,7 +128,5 @@ int main()
 }
 
 /*
-Does order matter? Try sorting
-Array bounds, overflow, special cases (n=1, n=max)
-Reverse the problem, try solving backwards. Count invalid solutions instead of valid one
+
 */
