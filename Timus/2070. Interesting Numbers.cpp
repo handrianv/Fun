@@ -1,5 +1,27 @@
 /*
-
+    S = Satisfying number, NS = Not Satisfying number.
+    P = Prime number, prime amount of divisor
+    PC = Prime number, composite amount of divisor. This is impossible.
+    CP = Composite number, prime amount of divisor.
+    CC = Composite number, composite amount of divisor
+    We have two choices, look for S or NS.
+    -.  Look for S
+        We should search both P and CC. Searching P up to 10^12 is infeasible, so we cannot look for S.
+    -.  Look for NS
+        We should search for CP.
+        Recall that to get the amount of divisor of a number N, we can write its Prime Factorization: a^n, b^m, .. x^y
+        Then D(N) = (n+1) * (m+1) * ... (y+1). D(N) is amount of divisor of N. E.g D(10) = 4.
+        We want D(N) to be prime, so the amount of distinct prime factor cannot be larger than 1, else D(N) is a multiple of some number which makes it composite.
+        Now we know the number must have only one prime factor. So N = a^n. D(N) = (n+1).
+        For D(N) to be prime, n must be one below a prime, except n == 1 (because a^(1) is a prime, which is in S).
+        So now, to get the amount of NS from [1...X]:
+        -. We loop through every prime factor PF from 2...X
+           For every number, we start evaluating every power that is one below prime (except 1).
+           From PF^2, PF^4, PF^6, PF^(10) ... until it is larger than X.
+           Since we start evaluating from power of 2, we only need to generate prime up to 10^6 (because the limit is only 10^12).
+           After that we can use inclusion-exclusion to get answer.
+    NOTE: There is an overflow bug in below code. Fortunately, because of how overflow behave when type is unsigned long long, it still gets accepted.
+          But that's just luck, it's much better to implement this in Java / Python.
 */
  
 // #pragma GCC optimize("Ofast")
