@@ -1,5 +1,12 @@
 /* 
-
+    Consider some simpler version of the games:
+    1. If there are only A's, then each player will just take 1 A every turn. The first player to move can at best only draw if count of A is even, else he lose.
+    2. If there are only a single segment of B, it doesn't matter how much B is in this segment, first player can just take it all. We go back to case 1 but this time the second 
+    player is first to pick A, so he's the one that can lose.
+    
+    In general, the game can have some segments of B's, and after removing all of them, the A's. There's no point in choosing A when there are still B's.
+    Each player wants to avoid being the first to pick A, or in other words they want to be the last to pick B. 
+    Then if we see each segment of B's as some pile of heaps, at each turn a player can choose a heap and take any number of B's from it (but not zero), this is exactly the classic misere nim game.
 */
 // #pragma GCC optimize("Ofast")
 // #pragma GCC target("avx,avx2,fma")

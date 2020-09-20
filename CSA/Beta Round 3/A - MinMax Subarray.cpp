@@ -1,5 +1,6 @@
 /* 
-
+    For each index i, if it's the minimum element then the shortest subarray to the left is with the rightmost index <= i of maximum element.
+    Similarly if index i is the maximum element.
 */
 // #pragma GCC optimize("Ofast")
 // #pragma GCC target("avx,avx2,fma")
