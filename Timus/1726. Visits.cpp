@@ -4,7 +4,7 @@
 
     Suppose we are working on X coordinates, and the points are 0-indexed following the input order.
     Then the sum of X-distance from point[i] to all point[j < i] is:
-    -. (p[i]-p[0] + p[i]-p[1] + .... + p[i]-p[i-1]) -> p[i] + (sum of p[j], 0 <= j < i)
+    -. (p[i]-p[0] + p[i]-p[1] + .... + p[i]-p[i-1]) -> i * p[i] - (sum of p[j], 0 <= j < i)
     So we can do it in O(N) by maintaining prefix sums of j.
 
     Do this for Y-coordinate as well, sum them up, and divide by number of pairs to get the average.
